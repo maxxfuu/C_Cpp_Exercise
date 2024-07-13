@@ -56,6 +56,12 @@ Key points:
 Example:
 A base class 'Shape' might have a method 'calculateArea()'. Derived classes like 'Circle' and 'Rectangle' can have their own implementations of 'calculateArea()', which will be used when called on objects of these classes.
 
-## Conclusion
-
-These four concepts - Encapsulation, Abstraction, Inheritance, and Polymorphism - form the foundation of Object-Oriented Programming. By leveraging these concepts, developers can create more modular, flexible, and maintainable code. Understanding and properly implementing these concepts is crucial for effective object-oriented design and programming.
+## Advance C++ Concepts that I intend on understanding
+- Value categories & Move semantics
+- Type deduction
+- Type erasure 
+- SFINAE (Substitution Failure Is Not An Error)
+- smart pointers
+- RAII (Resource Acquisition Is Initialization)
+- Compile-time programming 
+- Virtual inheritance 
