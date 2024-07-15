@@ -4,7 +4,7 @@
 #include <string>
 #include <iostream>
 // class Shape 
-class Shapes { 
+class Polygon { 
     // Scope of the class 
     public: 
         // data members or instance varibles 
@@ -13,7 +13,7 @@ class Shapes {
         int perimeter; 
 
         // Constructor_Name( Parameter List )
-        Shapes(int s, int l, int p);  
+        Polygon(int s, int l, int p);  
 
         //Display Function
         void display(); 
@@ -21,7 +21,7 @@ class Shapes {
         virtual double CalculateArea(); 
 
         //Destructor 
-        ~Shapes(); 
+        ~Polygon(); 
 };  
 
 #endif 

@@ -2,10 +2,10 @@
 #define SQUARE_H 
 
 // include base class header file 
-#include "shape.h" 
+#include "polygon.h" 
 
 // class DerivedClass : public BaseClass 
-class Square : public Shapes { 
+class Square : public Polygon { 
     public: 
         Square(); 
 
