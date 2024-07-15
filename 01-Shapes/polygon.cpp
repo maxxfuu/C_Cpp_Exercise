@@ -5,24 +5,23 @@
 #include "polygon.h"
 
 // base class 
-Polygon::Polygon(int s, int p, int l)
-    : sides(s), length(l), perimeter(p) {} 
+Polygon::Polygon(int s, int w, int h)
+    : sides(s), width(w), height(h) {} 
 
-// Display function definition 
+void Polygon::set_values(int s, int w, int h) { 
+    sides = s; 
+    width = w; 
+    height = h; 
+}
 
 //return type, Scope Operator, parameter list, {func body} 
 void Polygon::display() { 
-    std::cout << "Sides: " << sides << std::endl;  
-    std::cout << "Length: " << length << std::endl; 
-    std::cout << "Perimeter: " << perimeter << std::endl;  
+
+    std::cout << "Sides: " << sides << std::endl; 
+    std::cout << "Width: " << width << std::endl; 
+    std::cout << "Height: " << height << std::endl; 
+
 }
-
-double Polygon::CalculateArea() { 
-    
-    return 0; 
-}
-
-
 
 Polygon::~Polygon() {}; 
 

@@ -56,6 +56,10 @@ Key points:
 Example:
 A base class 'Shape' might have a method 'calculateArea()'. Derived classes like 'Circle' and 'Rectangle' can have their own implementations of 'calculateArea()', which will be used when called on objects of these classes.
 
+
+## Friends and inheritance 
+- In principle, private and protected members of a class cannot be accessed from outside the same class in which they are declared. However, this rule does not apply to "friends".
+
 ## Advance C++ Concepts that I intend on understanding
 - Value categories & Move semantics
 - Type deduction

@@ -5,21 +5,22 @@
 #include <iostream>
 // class Shape 
 class Polygon { 
-    // Scope of the class 
+    
+    // Using Protected so data members can be accessible to derived classes
+    protected:
+        int sides;  
+        int width; // width of each side  
+        int height; // height vector orthogonal to the base  
+    
     public: 
-        // data members or instance varibles 
-        int sides; 
-        int length; 
-        int perimeter; 
 
         // Constructor_Name( Parameter List )
-        Polygon(int s, int l, int p);  
+        Polygon(int s, int w, int h);  
 
         //Display Function
         void display(); 
 
-        virtual double CalculateArea(); 
-
+        void set_values(int s, int w, int h);
         //Destructor 
         ~Polygon(); 
 };  
