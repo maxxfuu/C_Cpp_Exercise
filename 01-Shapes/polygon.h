@@ -15,14 +15,16 @@ class Polygon {
     public: 
 
         // Constructor_Name( Parameter List )
-        Polygon(int s, int w, int h);  
+        Polygon(int = 0, int = 0, int = 0);  
 
         //Display Function
-        void display(); 
+        virtual void display(); 
 
+        // Setter Function 
         void set_values(int s, int w, int h);
+        
         //Destructor 
-        ~Polygon(); 
+        virtual ~Polygon() noexcept; 
 };  
 
 #endif 

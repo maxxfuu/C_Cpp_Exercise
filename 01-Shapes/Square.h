@@ -5,16 +5,27 @@
 #include "polygon.h" 
 
 // class DerivedClass : public BaseClass 
-class Square : public Polygon { 
+// Member fucntions are still accessable beacuse it is protected. 
+
+class Square : public Polygon {
+    private: 
+        int side_length; 
+    
     public: 
-        Square(); 
+        //constructor with additional parameter 
+        Square(int sl); 
 
-        //Override the base class Calculate function 
-        double CalculateArea() override; 
+        // Setter Method for side length 
+        void set_side(int sl); 
+        
+        // Getter Method for side length 
+        int get_side() const; 
 
-        ~Square(); 
+        void display() override; 
 
-};
+    ~Square() noexcept override; 
+
+}; 
 
 
 #endif 

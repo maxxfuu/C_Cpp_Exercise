@@ -23,5 +23,6 @@ void Polygon::display() {
 
 }
 
-Polygon::~Polygon() {}; 
+Polygon::~Polygon() noexcept {} 
+
 

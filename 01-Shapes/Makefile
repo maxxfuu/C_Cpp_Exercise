@@ -1,9 +1,9 @@
 CC = g++
 CXXFLAGS = -std=c++11
 
-PROGRAM = shape  
-OBJS = shape.o main.o
-HEADERS = shape.h
+PROGRAM = poly
+OBJS = polygon.o square.o main.o
+HEADERS = polygon.h square.h
 
 # Default make target
 all: clean $(PROGRAM)
@@ -13,8 +13,12 @@ $(PROGRAM): $(OBJS)
 	$(CC) $(OBJS) $(CXXFLAGS) -o $(PROGRAM)
 
 # Compilation rules for each object file
-shape.o: shape.cpp $(HEADERS)
-	$(CC) $(CXXFLAGS) -c shape.cpp -o shape.o
+square.o: square.cpp $(HEADERS)
+	$(CC) $(CXXFLAGS) -c square.cpp -o square.o
+
+# Compilation rules for each object file
+polygon.o: polygon.cpp $(HEADERS)
+	$(CC) $(CXXFLAGS) -c polygon.cpp -o polygon.o
 
 main.o: main.cpp $(HEADERS)
 	$(CC) $(CXXFLAGS) -c main.cpp -o main.o
