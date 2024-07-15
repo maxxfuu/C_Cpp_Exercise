@@ -9,16 +9,16 @@ class Shapes {
     public: 
         // data members or instance varibles 
         int sides; 
+        int length; 
         int perimeter; 
-        std::string type; 
 
         // Constructor_Name( Parameter List )
-        Shapes(int s, int p, std::string t);  
+        Shapes(int s, int l, int p);  
 
         //Display Function
         void display(); 
 
-        double CalculateArea(); 
+        virtual double CalculateArea(); 
 
         //Destructor 
         ~Shapes(); 

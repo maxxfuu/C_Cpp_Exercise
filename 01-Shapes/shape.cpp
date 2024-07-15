@@ -4,22 +4,24 @@
 
 #include "shape.h"
 // base class 
-Shapes::Shapes(int s, int p, std::string t)
-    : sides(s), perimeter(p), type(t) {} 
+Shapes::Shapes(int s, int p, int l)
+    : sides(s), length(l), perimeter(p) {} 
 
 // Display function definition 
 
 //return type, Scope Operator, parameter list, {func body} 
 void Shapes::display() { 
-    std::cout << "Shape: " << type << std::endl;  
     std::cout << "Sides: " << sides << std::endl;  
+    std::cout << "Length: " << length << std::endl; 
     std::cout << "Perimeter: " << perimeter << std::endl;  
 }
 
 double Shapes::CalculateArea() { 
-    double area = 0; 
-    return area; 
+    
+    return 0; 
 }
+
+
 
 Shapes::~Shapes() {}; 
 
