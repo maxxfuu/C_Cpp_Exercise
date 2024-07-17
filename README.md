@@ -1,5 +1,5 @@
 # OOP-Exercise
-Documenting the progression of my mini projects of incrementing difficulty to practice OOP concepts around Encapsulation, Inheritance, Polymorphism, and Abstraction.
+Documenting the progression of my mini projects of incrementing difficulty to practice OOP conceptsin C++.
 # Object-Oriented Programming (OOP) Concepts
 
 ## Introduction
