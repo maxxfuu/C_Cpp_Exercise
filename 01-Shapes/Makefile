@@ -6,7 +6,7 @@ OBJS = polygon.o square.o main.o
 HEADERS = polygon.h square.h
 
 # Default make target
-all: clean $(PROGRAM)
+all: clean $(PROGRAM) 
 
 # Link the program
 $(PROGRAM): $(OBJS)

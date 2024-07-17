@@ -8,4 +8,9 @@ void Square::display() {
     Polygon::display(); 
 } 
 
+void Square::set_side(int new_side_length) {
+    side_length = new_side_length;
+    Polygon::set_values(4, side_length, side_length);
+}
+
 Square::~Square() noexcept = default; 
