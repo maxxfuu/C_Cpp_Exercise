@@ -22,9 +22,8 @@ class Square : public Polygon {
         int get_side() const; 
 
         void display() override; 
-
-    ~Square() noexcept override; 
-
+ 
+        ~Square() {} 
 }; 
 
 

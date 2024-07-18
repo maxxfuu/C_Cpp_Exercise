@@ -1,4 +1,4 @@
-CC = g++
+CXX = c++
 CXXFLAGS = -std=c++11
 
 PROGRAM = poly
@@ -12,16 +12,11 @@ all: clean $(PROGRAM)
 $(PROGRAM): $(OBJS)
 	$(CC) $(OBJS) $(CXXFLAGS) -o $(PROGRAM)
 
-# Compilation rules for each object file
-square.o: square.cpp $(HEADERS)
-	$(CC) $(CXXFLAGS) -c square.cpp -o square.o
+poly: polygon.o square.o main.o
+	$(CXX) $(CXXFLAGS) $^ -o $@
 
-# Compilation rules for each object file
-polygon.o: polygon.cpp $(HEADERS)
-	$(CC) $(CXXFLAGS) -c polygon.cpp -o polygon.o
-
-main.o: main.cpp $(HEADERS)
-	$(CC) $(CXXFLAGS) -c main.cpp -o main.o
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean: 
 	rm -f *.o

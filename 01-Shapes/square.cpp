@@ -13,4 +13,9 @@ void Square::set_side(int new_side_length) {
     Polygon::set_values(4, side_length, side_length);
 }
 
-Square::~Square() noexcept = default; 
+int Square::get_side() const { 
+    return side_length; 
+}
+
+Square::~Square() {} 
+

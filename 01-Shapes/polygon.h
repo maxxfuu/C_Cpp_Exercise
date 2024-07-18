@@ -24,7 +24,7 @@ class Polygon {
         void set_values(int s, int w, int h);
         
         //Destructor 
-        virtual ~Polygon() noexcept; 
+        virtual ~Polygon();  
 };  
 
 #endif 

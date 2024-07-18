@@ -11,7 +11,9 @@ all: clean $(PROGRAM)
 - Wasting Computation if you clean everything. 
 
 Makefile: 
-Look into CMake, Automatic Variabes, $@ $< $^
+you would use ‘$@’ for the object file name and ‘$<’ for the source file name.
+
+
 Wall, Wextra, Wpedantic 
 
 Main: 
