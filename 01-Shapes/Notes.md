@@ -1,7 +1,6 @@
-
-General: 
-add git ignore 
-
+# Changes
+1. Added .gitignore 
+2. Now using 
 CXX not C: 
 - C is for C++ CXX. gcc or g++
 

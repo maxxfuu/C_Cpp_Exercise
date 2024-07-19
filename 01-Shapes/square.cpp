@@ -17,5 +17,4 @@ int Square::get_side() const {
     return side_length; 
 }
 
-Square::~Square() {} 
 
