@@ -16,10 +16,7 @@ class checkingAccount : public bankAccount {
         double write_check(double ammount) override {} 
         
 
-        // Need to override all pure virtual functions 
-        double make_deposits(double ammount) override {} 
-        double make_withdraws(double ammount) override {} 
-        double create_monthly_statements() override {} 
+        // Need to override pure virtual functions
         double write_check(double ammount) override {} 
 }; 
 

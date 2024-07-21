@@ -20,7 +20,8 @@ class noServiceChargeChecking : public checkingAccount {
         double make_deposits(double ammount) override {} 
         double make_withdraws(double ammount) override {} 
         double create_monthly_statements() override {} 
-        void createMonthlyStatement() override;
+        double write_check(double ammount) override {} 
+
 
 };  
  
