@@ -17,10 +17,10 @@ class serviceChargeChecking : public checkingAccount {
             : checkingAccount() {} 
 
         // Need to override all pure virtual functions 
-        double make_deposits(double ammount) override {} 
-        double make_withdraws(double ammount) override {} 
-        double create_monthly_statements() override {} 
-        double write_check(double ammount) override {} 
+        void make_deposits(double ammount) override {} 
+        void make_withdraws(double ammount) override {} 
+        void create_monthly_statements() override {} 
+        void write_check(double ammount) override {} 
 
 };  
  

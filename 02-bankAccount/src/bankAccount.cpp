@@ -1,6 +1,6 @@
 #include "bankAccount.h" 
 
-bankAccount::bankAccount(const int& num, const std::string& name, const int& bal)
+bankAccount::bankAccount(const int& num, const std::string& name, const double& bal)
     : accountNumber(num), holderName(name), balance(bal) {} 
     
 std::string bankAccount::retrieve_account_name() const {
@@ -15,11 +15,10 @@ double bankAccount::retrieve_account_balance() const {
     return balance; 
 } 
 
-double bankAccount::make_deposits(double ammount) { 
-    return (balance + ammount); 
+void bankAccount::make_deposits(double amount) { 
+    balance += amount;   
 } 
 
-double bankAccount::make_withdraws(double ammount) { 
-    return (balance - ammount); 
+void bankAccount::make_withdraws(double amount) { 
+    balance -= amount; 
 } 
-

@@ -13,11 +13,8 @@ class checkingAccount : public bankAccount {
         checkingAccount(const int& num, const std::string& name, const int& bal) 
             : bankAccount() {}; 
 
-        double write_check(double ammount) override {} 
-        
+        void write_check(double ammount) override {} 
 
-        // Need to override pure virtual functions
-        double write_check(double ammount) override {} 
 }; 
 
 #endif

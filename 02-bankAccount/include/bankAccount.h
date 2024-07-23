@@ -13,21 +13,20 @@ class bankAccount {
         std::string holderName; 
         double balance; 
 
-        bankAccount() : accountNumber(0), holderName(""), balance(0.0) {} 
-        
-        bankAccount(const int& num, const std::string& name, const int& bal) {} 
+        bankAccount() : accountNumber(0), holderName(""), balance(0.0) {}; 
+        bankAccount(const int& num, const std::string& name, const double& bal); 
     
     public:
-        std::string retrieve_account_name() const {}   
-        int retrieve_account_number() const {} 
-        double retrieve_account_balance() const {} 
+        std::string retrieve_account_name() const;    
+        int retrieve_account_number() const;  
+        double retrieve_account_balance() const;  
         
     // Pure Virtual Function Without definition. Acting as a placeholder that is meant to be redefined by dervied classes. 
-        virtual double make_deposits(double ammount) = 0; 
-        virtual double make_withdraws(double ammount) = 0;
-        virtual double create_monthly_statements() = 0; 
+        virtual void make_deposits(double ammount) = 0; 
+        virtual void make_withdraws(double ammount) = 0;
+        virtual void create_monthly_statements() = 0; 
 
-        virtual double write_check(double ammount) = 0;           // Up to the dervied classes to implement this function.   
+        virtual void write_check(double ammount) = 0;           // Up to the dervied classes to implement this function.   
 
         virtual ~bankAccount() = default; 
 }; 

@@ -11,9 +11,16 @@ class certificateOfDeposit : public bankAccount {
 
     public: 
 
-        certificateOfDeposit() {} 
+        certificateOfDeposit() 
+            : bankAccount() {};  
 
-    
+        certificateOfDeposit(const int& num, const std::string& name, const int& bal) 
+            : bankAccount() {};  
+
+        void make_deposits(double ammount) override {} 
+        void make_withdraws(double ammount) override {} 
+        void create_monthly_statements() override {} 
+
 
 }; 
 
