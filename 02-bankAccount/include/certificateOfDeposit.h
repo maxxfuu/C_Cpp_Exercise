@@ -10,12 +10,13 @@ class certificateOfDeposit : public bankAccount {
         int cd_months; 
 
     public: 
-
+        // Default constructor
         certificateOfDeposit() 
-            : bankAccount() {};  
+            : bankAccount(), CD_maturity_months(0), interest_rates(0.0), cd_months(0) {}  
 
-        certificateOfDeposit(const int& num, const std::string& name, const int& bal) 
-            : bankAccount() {};  
+        // Parameterized constructor
+        certificateOfDeposit(const int& num, const std::string& name, const int& bal, int maturityMonths, double interestRate, int cdmonths) 
+            : bankAccount(num, name, bal), CD_maturity_months(maturityMonths), interest_rates(interestRate), cd_months(cdmonths) {}  
 
         void make_deposits(double ammount) override {} 
         void make_withdraws(double ammount) override {} 
@@ -24,4 +25,4 @@ class certificateOfDeposit : public bankAccount {
 
 }; 
 
-#endif CERTIFICATE_OF_DEPOSIT 
+#endif 

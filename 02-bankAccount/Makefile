@@ -1,43 +1,30 @@
-# Compiler
-CXX = g++
+.PHONY: debug all clean
 
-# Compiler flags
-CXXFLAGS = -std=c++11 -Wall -Wextra -pedantic
+CXX = c++
+CXXFLAGS = -std=c++11
+PROGRAM = facc
+OBJS = bankAccount.o certificateOfDeposit.o checkingAccount.o highInterestChecking.o highInterestSavings.o hw06.o noServiceCharge.o savingsAccount.o serviceChargeChecking.o
+HEADERS = bankAccount.h certificateOfDeposit.h checkingAccount.h highInterestChecking.h highInterestSavings.h hw06.h noServiceCharge.h savingsAccount.h serviceChargeChecking.h
 
-# Directories
-SRC_DIR = src
-INCLUDE_DIR = include
-OBJ_DIR = obj
-BIN_DIR = bin
+# Debugging information
+debug:
+	@echo "OBJS: $(OBJS)"
+	@echo "HEADERS: $(HEADERS)"
+	@echo "Existing cpp files:"
+	@ls -l *.cpp || echo "No .cpp files found"
+	@echo "Existing header files:"
+	@ls -l *.h || echo "No .h files found"
 
-# Source files
-SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+# Default make target
+all: debug $(PROGRAM)
 
-# Object files
-OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+# Link the program
+$(PROGRAM): $(OBJS)
+	$(CXX) $(OBJS) $(CXXFLAGS) -o $(PROGRAM)
 
-# Executable name
-EXECUTABLE = $(BIN_DIR)/myprogram
+%.o: %.cpp $(HEADERS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Include path
-INCLUDES = -I$(INCLUDE_DIR)
-
-# Main target
-all: $(EXECUTABLE)
-
-# Linking the executable
-$(EXECUTABLE): $(OBJECTS)
-	@mkdir -p $(BIN_DIR)
-	$(CXX) $(OBJECTS) -o $@
-
-# Compiling source files
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(OBJ_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
-
-# Clean up
-clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
-
-# Phony targets
-.PHONY: all clean
+clean: 
+	rm -f *.o
+	rm -f $(PROGRAM)
