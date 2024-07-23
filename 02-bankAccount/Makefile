@@ -1,30 +1,32 @@
-.PHONY: debug all clean
-
 CXX = c++
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=c++11 -I./include
 PROGRAM = facc
-OBJS = bankAccount.o certificateOfDeposit.o checkingAccount.o highInterestChecking.o highInterestSavings.o hw06.o noServiceCharge.o savingsAccount.o serviceChargeChecking.o
-HEADERS = bankAccount.h certificateOfDeposit.h checkingAccount.h highInterestChecking.h highInterestSavings.h hw06.h noServiceCharge.h savingsAccount.h serviceChargeChecking.h
+SRC_DIR = src
+OBJ_DIR = obj
+BIN_DIR = bin
+INCLUDE_DIR = include
 
-# Debugging information
-debug:
-	@echo "OBJS: $(OBJS)"
-	@echo "HEADERS: $(HEADERS)"
-	@echo "Existing cpp files:"
-	@ls -l *.cpp || echo "No .cpp files found"
-	@echo "Existing header files:"
-	@ls -l *.h || echo "No .h files found"
+SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
+OBJECTS = $(SOURCES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+DEPS = $(OBJECTS:.o=.d)
 
 # Default make target
-all: debug $(PROGRAM)
+all: $(BIN_DIR)/$(PROGRAM)
 
 # Link the program
-$(PROGRAM): $(OBJS)
-	$(CXX) $(OBJS) $(CXXFLAGS) -o $(PROGRAM)
+$(BIN_DIR)/$(PROGRAM): $(OBJECTS)
+	@mkdir -p $(BIN_DIR)
+	$(CXX) $(OBJECTS) $(CXXFLAGS) -o $@
 
-%.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Compile source files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(CXX) $(CXXFLAGS) -MMD -c $< -o $@
 
 clean: 
-	rm -f *.o
-	rm -f $(PROGRAM)
+	rm -rf $(OBJ_DIR)
+	rm -rf $(BIN_DIR)
+
+-include $(DEPS)
+
+.PHONY: all clean
