@@ -3,20 +3,24 @@
 
 #include "bankAccount.h"
 #include <iostream> 
-class checkingAccount : public bankAccount {
+#include <iomanip>  
+#include <sstream> 
+#include <vector>  
+#include <string>
 
-    public: 
-
-        checkingAccount() 
-            : bankAccount() {}; 
+class checkingAccount : public bankAccount { 
+    protected: 
+        std::vector<std::string> transactions; 
         
-        checkingAccount(const int& num, const std::string& name, const int& bal) 
-            : bankAccount() {}; 
+    public: 
+        checkingAccount();  
+        
+        checkingAccount(const int& num, const std::string& name, const long double& bal); 
 
-        void make_deposits(double ammount) override {} 
-        void make_withdraws(double ammount) override {} 
-        void create_monthly_statements() override {}  
-        void write_check(double ammount) override {}    
+        void make_deposits(double ammount) override;  
+        void make_withdraws(double ammount) override;  
+        void create_monthly_statements() override;   
+        void write_check(double ammount) override;     
 }; 
 
 #endif

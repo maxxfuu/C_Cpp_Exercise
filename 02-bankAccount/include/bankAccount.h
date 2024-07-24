@@ -11,7 +11,7 @@ class bankAccount {
     protected: // Don't want users from outside the scope to have access to member variables. 
         int accountNumber; 
         std::string holderName; 
-        double balance; 
+        long double balance; 
 
         bankAccount() : accountNumber(0), holderName(""), balance(0.0) {}; 
         bankAccount(const int& num, const std::string& name, const double& bal); 
