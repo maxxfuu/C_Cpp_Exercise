@@ -11,16 +11,15 @@ class serviceChargeChecking : public checkingAccount {
         int checksWritten; 
 
     public: 
-        serviceChargeChecking() {} 
+        serviceChargeChecking();  
 
-        serviceChargeChecking(const int& num, const std::string& name, const int& bal) 
-            : checkingAccount() {} 
+        serviceChargeChecking(const int& num, const std::string& name, const long double& bal, double charge, int checks); 
 
         // Need to override all pure virtual functions 
-        void make_deposits(double ammount) override {} 
-        void make_withdraws(double ammount) override {} 
-        void create_monthly_statements() override {} 
-        void write_check(double ammount) override {} 
+        void make_deposits(double amount) override; 
+        void make_withdraws(double amount) override; 
+        void create_monthly_statements() override; 
+        void write_check(double amount) override; 
 
 };  
  

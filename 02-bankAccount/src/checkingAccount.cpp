@@ -7,8 +7,10 @@ checkingAccount::checkingAccount(const int& num, const std::string& name, const 
             : bankAccount(num, name, bal) {}; 
 
 void checkingAccount::make_deposits(double amount) { 
-    if (amount > 0) { 
-        balance -= amount; 
+    if (amount <= 0) { 
+        throw std::invalid_argument("Invalid Deposit Value"); 
+    } else if (amount > 0) { 
+        balance += amount; 
 
         std::ostringstream stream; 
         stream << std::fixed << std::setprecision(2); 
@@ -19,19 +21,23 @@ void checkingAccount::make_deposits(double amount) {
 }
 
 void checkingAccount::make_withdraws(double amount) { 
-    if (amount > 0 && amount <= balance) { 
+    if (amount <= 0) { 
+        throw std::invalid_argument("Invalid Withdrawl Value"); 
+    } else if (amount > balance) { 
+        std::cout << "Insufficient Funds\n";
+    } else if (amount > 0) { 
         balance -= amount; 
-        
+
         std::ostringstream stream; 
         stream << std::fixed << std::setprecision(2); 
 
-        stream << "withdrawl: $" << amount << " | Balance $" << balance; 
+        stream << "Withdrawl: $" << amount << " | Balance $" << balance; 
         transactions.push_back(stream.str());  
     }
 } 
 
 void checkingAccount::create_monthly_statements() { 
-    std::cout << "Account Number: " << accountNumber << "\n"; 
+    std::cout << "\nAccount Number: " << accountNumber << "\n"; 
     std::cout << "Account Holder: " << holderName << "\n"; 
     std::cout << "Initial Balance: $" << std::fixed << std::setprecision(2) << balance << "\n"; 
     std::cout << "______________________\n\n"; 
