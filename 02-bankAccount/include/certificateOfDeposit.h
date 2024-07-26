@@ -1,13 +1,21 @@
 #ifndef CERTIFICATE_OF_DEPOSIT
 #define CERTIFICATE_OF_DEPOSIT 
 
-#include "bankAccount.h"
+#include "bankAccount.h" 
+#include <iostream>
+#include <iomanip>
+#include <sstream>
+#include <stdexcept>
+#include <cmath>
+#include <vector>
 
 class certificateOfDeposit : public bankAccount { 
     private: 
         int CD_maturity_months; 
         double interest_rates; 
-        int cd_months; 
+        int cd_months;
+        std::vector<std::string> cd_transactions;  // Separate transaction list for CD
+
 
     public: 
         // Default constructor
@@ -22,6 +30,10 @@ class certificateOfDeposit : public bankAccount {
         void create_monthly_statements() override;  
         void write_check(double amount) override; 
 
+        void update_months(int months);
+        double calculate_interest() const;
+        double calculate_interest(int months) const;
+        
 }; 
 
 #endif 
