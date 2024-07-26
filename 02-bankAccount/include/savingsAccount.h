@@ -9,15 +9,13 @@ class savingsAccount : public bankAccount {
         double interestRate; 
 
     public: 
-        savingsAccount() 
-            : bankAccount(), interestRate(0.0) {}
+        savingsAccount();   
 
-        savingsAccount(const int& num, const std::string& name, const double& bal, const double& intRate) 
-            : bankAccount(num, name, bal), interestRate(intRate) {} 
+        savingsAccount(const int& num, const std::string& name, const double& bal, const double& intRate);  
     
-        void make_deposits(double amount) override {} 
-        void make_withdraws(double amount) override {}
-        void create_monthly_statements() override {} 
+        void make_deposits(double amount) override;  
+        void make_withdraws(double amount) override; 
+        void create_monthly_statements() override;  
 
 
 

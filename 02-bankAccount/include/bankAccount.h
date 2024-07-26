@@ -22,11 +22,11 @@ class bankAccount {
         double retrieve_account_balance() const;  
         
     // Pure Virtual Function Without definition. Acting as a placeholder that is meant to be redefined by dervied classes. 
-        virtual void make_deposits(double ammount) = 0; 
-        virtual void make_withdraws(double ammount) = 0;
+        virtual void make_deposits(double amount) = 0; 
+        virtual void make_withdraws(double amount) = 0;
         virtual void create_monthly_statements() = 0; 
 
-        virtual void write_check(double ammount) = 0;           // Up to the dervied classes to implement this function.   
+        virtual void write_check(double amount) = 0;           // Up to the dervied classes to implement this function.   
 
         virtual ~bankAccount() = default; 
 }; 
