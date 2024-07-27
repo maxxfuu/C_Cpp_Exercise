@@ -37,6 +37,8 @@ int main() {
     acc5.create_monthly_statements();  
 
     certificateOfDeposit acc6(3513, "Hugh Jackson", 1000, 12, 2145.2, 9); 
+    acc5.make_deposits(22.24); 
+    acc5.make_withdraws(83.97);   
     acc6.create_monthly_statements(); 
 
     return 0; 
