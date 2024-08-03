@@ -27,28 +27,11 @@ void show_pointer(void *x) {
     show_bytes((byte_pointer) &x, sizeof(void *)); 
 }
 
-int main() { 
-    int a = 0x12345678; 
-    int len1 = 1;
-    int len2 = 2; 
-    int len3 = 3; 
-    int len4 = 4;   
-
-    //  This cast indicates to the compiler that the program should consider the pointer to be to a sequence of bytes rather than to an object of the original data type. 
-    byte_pointer ap = (byte_pointer) &a; 
-
-    show_bytes(ap, len1);
-    show_bytes(ap, len2); 
-    show_bytes(ap, len3); 
-    show_bytes(ap, len4); 
-
-    show_bytes((byte_pointer) m, strlen(m)); 
-    // Note that letters from a through z have ASCII codes 0x61 throught 0x7A 
-
+void inplace_swap(int *x, int *y) { 
     
 }
-// Quesiton 2.5 
-// A. Little Endian: 78                     Big Endian: 12 
-// B. Little Endian: 78 56                  Big Endian: 12 34 
-// C. Little Endian: 78 56 34               Big Endian: 12 34 56
 
+int main() { 
+
+}
+ 
