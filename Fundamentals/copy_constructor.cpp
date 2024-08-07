@@ -23,7 +23,11 @@ class Foo {
         int get() const { 
             return *x_ptr; 
 
-    } 
+       }
+
+        ~Foo() { 
+            delete x_ptr; 
+        } 
 }; 
 
 // Copy constructor exercise. 
@@ -39,7 +43,6 @@ int main() {
     g.set(69); 
 
     std::cout << g.get(); 
-
 
 
     
